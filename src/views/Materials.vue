@@ -28,17 +28,27 @@ onMounted(loadMaterials)
 
 <template>
   <div>
-    <h2>Raw Materials</h2>
+    <h2>Matéria-Prima</h2>
 
-    <input v-model="name" placeholder="Name" />
-    <input v-model="quantity" placeholder="Quantity" />
+    <div class="form-group">
+      <input v-model="name" placeholder="Name" />
+      <input v-model="quantity" placeholder="Quantity" />
+      <button @click="createMaterial">Adicionar</button>
+    </div>
 
-    <button @click="createMaterial">Create</button>
-
-    <ul>
+    <ul class="list">
       <li v-for="m in materials" :key="m.id">
         {{ m.name }} - {{ m.quantity }}
       </li>
     </ul>
   </div>
 </template>
+
+<style scoped>
+.form-group { display: flex; flex-direction: column; }
+.price-badge { 
+  float: right; 
+  color: #42b983; 
+  font-weight: bold; 
+}
+</style>

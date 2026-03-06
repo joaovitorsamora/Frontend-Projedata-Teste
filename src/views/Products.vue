@@ -31,18 +31,28 @@ onMounted(loadProducts)
 
 <template>
   <div>
-    <h2>Products</h2>
+    <h2>📦 Produtos</h2>
+    <div class="form-group">
+      <input v-model="code" placeholder="Código" />
+      <input v-model="name" placeholder="Nome" />
+      <input v-model="price" type="number" placeholder="Preço" />
+      <button @click="createProduct">Adicionar</button>
+    </div>
 
-    <input v-model="code" placeholder="Code" />
-    <input v-model="name" placeholder="Name" />
-    <input v-model="price" placeholder="Price" />
-
-    <button @click="createProduct">Create</button>
-
-    <ul>
+    <ul class="list">
       <li v-for="p in products" :key="p.id">
-        {{ p.name }} - {{ p.price }}
+        <strong>{{ p.code }}</strong> - {{ p.name }} 
+        <span class="price-badge">R$ {{ p.price }}</span>
       </li>
     </ul>
   </div>
 </template>
+
+<style scoped>
+.form-group { display: flex; flex-direction: column; }
+.price-badge { 
+  float: right; 
+  color: #42b983; 
+  font-weight: bold; 
+}
+</style>

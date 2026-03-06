@@ -19,7 +19,7 @@ async function optimize() {
     <h2>Production Optimization</h2>
 
     <button @click="optimize">
-      Calculate Production
+      Calcular
     </button>
 
     <div v-if="result">
