@@ -16,14 +16,14 @@ async function optimize() {
 
 <template>
   <div>
-    <h2>Production Optimization</h2>
+    <h2>Otimização da Produção</h2>
 
     <button @click="optimize">
       Calcular
     </button>
 
     <div v-if="result">
-      <h3>Maximum Production</h3>
+      <h3>Produção Máxima</h3>
 
       <div v-for="(value, key) in result" :key="key">
         {{ key }} → {{ value }} units
